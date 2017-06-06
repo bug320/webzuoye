@@ -4,7 +4,8 @@
 ### 后台
 1. 数据库模块 ---- DBM
  1.1 用户信息 ---- UserInfo
-    获取用户信息 --- getUserInfo()
+    获取用户信息 --- getUserInfo() --- 不超过10 位数
+        用户id   ---- User.id    
         用户名   ---- User.name
         用户密码 ---- User.passwd
         最好成绩 ---- User.best
@@ -15,8 +16,8 @@
         删除用户 ---- Delete()
  1.2 系统信息 --- SysInfo
     游戏难度  --- GameLevel
-        回合数 --- GameLevel.loopSize
-        猜测数长度 ---GameLevel.lengthSize
+        回合数 --- GameLevel.loopSize  --- 不超过2位数
+        猜测数长度 ---GameLevel.lengthSize  --- 不超过2位数
 
 2. 游戏模块 --- GPM
  2.1 设置函数
