@@ -43,9 +43,9 @@ class MySQL(object):
             #debug end
             self.cursor.execute(sql)
             self.conn.commit()
-        except Exception as e :
+        except:
             self.conn.rollback() 
-            print "insert error --- ",e
+            print "insert error!"
         pass
     def select(self,table):
         #result = []
@@ -53,9 +53,9 @@ class MySQL(object):
             self.cursor.execute("SELECT * FROM %s" % table )
             result = self.cursor.fetchall()
             return result
-        except Exception as e :
+        except:
             self.conn.rollback()
-            print "select error ---  ",e
+            print "select error"
             return None
         pass
     def select(self,table,sql):
@@ -63,9 +63,9 @@ class MySQL(object):
             self.cursor.execute(sql)
             result = self.cursor.fetchall()
             return result
-        except Exception as e:
+        except:
             self.conn.rollback()
-            print "select error --- ",e
+            print "select error"
         pass
     def update(self,table):
         pass
@@ -75,17 +75,17 @@ class MySQL(object):
             self.cursor.execute(sql)
             self.conn.commit()
             pass
-        except Exception as e :
+        except:
             self,conn.rollback()
-            print "Delete Error! --- ",e
+            print "Delete Error!"
             pass
         pass
 
     pass
 if __name__ == "__main__":
     db = MySQL()
-    db.insert("SYS",loopSize="7",lengthSize="4")
-    db.delete("SYS","DELETE FROM SYS WHERE loopSize='17' ")
+    #db.insert("SYS",loopSize="14",lengthSize="4")
+    db.delete("DELETE FROM SYS")
     result = db.select("SYS","SELECT * from SYS")
     print type(result)
     print result
